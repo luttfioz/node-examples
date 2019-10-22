@@ -1,7 +1,9 @@
 
 
-mongod 
-mongo
-mongoimport --db test --collection restaurants --drop --file dataset.json
+> mongod   
+> mongod --dbpath /home/eteration/Desktop/data/db  
+> mongo  
+> mongoimport --db test --collection restaurants --drop --file /home/eteration/Desktop/dataset.json  
+
 
 
