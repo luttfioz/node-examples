@@ -1,4 +1,5 @@
 
+MongoDB Compas kurulabilir.  
 
 > mongod   
 > mongod --dbpath /home/eteration/Desktop/data/db  
