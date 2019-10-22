@@ -1,0 +1,1 @@
+dosyaları "eteration" yazarak açabilirsiniz.  
