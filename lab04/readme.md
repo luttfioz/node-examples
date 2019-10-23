@@ -6,5 +6,10 @@ MongoDB Compas kurulabilir.
 > mongo  
 > mongoimport --db test --collection restaurants --drop --file /home/eteration/Desktop/dataset.json  
 
+> mongorestore dump
 
+.limit(1).pretty()  
+.count()
+
+> npm i mongoose -g  
 
