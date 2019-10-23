@@ -36,3 +36,42 @@ module.exports.getProductById = function (req, res) {
             sendJSONresponse(res, 200, data);
         });
 };
+
+module.exports.addProduct = function (req, res, next) {
+    var newId = Math.floor(Math.random() * 91 + 10);
+    var newProduct = new Product(
+        {
+            "id": newId,
+            "img": req.body.img,
+            "alt": req.body.alt,
+            "name": req.body.name,
+            "price": req.body.price,
+            "description": req.body.description
+        });
+
+    newProduct.save(function (err) {
+        if (err) {
+            return console.error(err);
+        };
+        sendJSONresponse(res, 200, newProduct);
+    });
+};
+
+module.exports.deleteProductById = function (req, res) {
+    var id = req.params.id;
+
+    Product.
+        find({ id: id }).
+        exec(function (err, data) {
+            if (err) {
+                return console.error(err);
+            };
+            Product.deleteOne({ id: id }).
+                exec(function (err, deleteResult) {
+                    if (err) {
+                        return console.error(err);
+                    };
+                    sendJSONresponse(res, 200, data);
+                });
+        });
+};
